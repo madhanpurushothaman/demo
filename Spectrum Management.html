@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./assets/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="spectrum management.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- modal -->
+
+    <div class="toast" id="toast">Ticket created</div>
+    <div class="bg-modal" id="one">
+      <div class="modal-contents" id="modal-contents">
+        <div class="circle" id="form-container">
+          <div
+            style="padding-left: 25px; display: flex; width: 85px; height: 85px"
+          >
+            <img
+              class="ticket-icons1 cursor_pointer"
+              src="C:\Users\Admin\Desktop\html & css\assets\icons8-ticket-confirmed-50 (1).png"
+              alt=" not found"
+              width="30px"
+            />
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="header">
+            <h2 class="header-size">Register With Us</h2>
+          </div>
+          <form class="form" id="form">
+            <!-- onsubmit="event.preventDefault();" -->
+            <div class="form-control" id="form1">
+              <label class="label-size">Username</label>
+              <input types="text" placeholder=" Enter Username" id="username" />
+              <small></small>
+            </div>
+
+            <div class="form-control" id="form1">
+              <label class="label-size">E-mail</label>
+              <input types="text" placeholder=" Enter E-mail" id="E-mail" />
+              <small></small>
+            </div>
+
+            <div class="form-control">
+              <label class="label-size">Password</label>
+              <input
+                type="password"
+                placeholder=" Enter password"
+                id="password"
+              />
+              <small></small>
+            </div>
+
+            <div class="form-control last-form-control-submit">
+              <label class="label-size">Confirm Password</label>
+              <input
+                type="password"
+                placeholder=" Enter password "
+                id="conform_password"
+              />
+              <small></small>
+            </div>
+            <div style="padding: 35px 60px">
+              <button id="submit-button">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bg-modal-frequency-trend" id="bg-modal-frequency-trend">
+      <div
+        class="modal-frequency-trend-content"
+        id="modal-frequency-trend-content"
+      >
+        >
+        <div class="modal-frequency-trend-box" id="modal-frequency-trend-box">
+          <div class="Frequency font-text headings roboto-bold">
+            Frequency Trend
+          </div>
+
+          <img
+            class="graph"
+            src="assets/dotgraph.png"
+            alt=" not found"
+            width="30px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <header class="main-nav">
+      <div class="menu-box cursor_pointer" onclick="togglebar()">
+        <img
+          class="menu-icons1"
+          src="assets/iconfinder_menu_1814109.png"
+          alt=" not found"
+          width="30px"
+        />
+      </div>
+
+      <div class="box1">
+        <h3 class="heading-main">
+          <span class="first-heading">SPECTRUM</span> MANAGEMENT
+        </h3>
+      </div>
+      <!-- ll -->
+      <div class="box">
+        <div class="alarm_ticket_icons">
+          <button
+            id="modal-button "
+            class="button-border button-color"
+            onclick="modal()"
+          >
+            <img
+              class="ticket-icons1 cursor_pointer"
+              src="assets/icons8-ticket-confirmed-50.png"
+              alt=" not found"
+              width="30px"
+            />
+          </button>
+        </div>
+        <div class="ticket-icons">
+          <button
+            class="button-border button-color"
+            id="popup-button "
+            onclick="popup()"
+          >
+            <img
+              class="alarm-icons1 cursor_pointer"
+              src="assets/icons8-notification-100.png "
+              alt="not found"
+              width="30px"
+            />
+          </button>
+          <div class="number"></div>
+          <!--  Notification popup -->
+          <div class="popup-box" id="popup" onclick="popup()">
+            <div class="popup-box-content" id="index-0">
+              <div class="notification">Notifications</div>
+              <div class="mark-as-read">Mark All as read</div>
+            </div>
+
+            <div class="popup-box-content" onclick="expand(this)" id="index-1">
+              <div class="icon">
+                <img
+                  class="alarm-icons1 cursor_pointer"
+                  src="assets\google-contacts.svg"
+                  alt="assets\google-contacts - white.svg"
+                  width="30px"
+                />
+              </div>
+              <div class="container-descrption_date">
+                <div class="descrpition-font">
+                  Frequency is out of range for site 013023. Unresolved.
+                </div>
+                <div class="date-font">19 hours ago</div>
+              </div>
+            </div>
+            <div class="popup-box-content" onclick="expand(this)" id="index-2">
+              <div class="icon">
+                <img
+                  class="alarm-icons1 cursor_pointer"
+                  src="assets\signal-tower.svg "
+                  alt="assets\signal-tower - white.svg"
+                  width="30px"
+                />
+              </div>
+              <div class="container-descrption_date">
+                <div class="descrpition-font">
+                  New hardware issue found on Site 042905. Unresolved.
+                </div>
+                <div class="date-font">1 day ago</div>
+              </div>
+            </div>
+            <div class="popup-box-content" onclick="expand(this)" id="index-3">
+              <div class="icon">
+                <img
+                  class="alarm-icons1 cursor_pointer"
+                  src="assets\signal-tower.svg "
+                  alt="assets\signal-tower - white.svg"
+                  width="30px"
+                />
+              </div>
+              <div class="container-descrption_date">
+                <div class="descrpition-font">
+                  Jane Doe has accepted the ticket DESK-192. Click for more
+                  details
+                </div>
+                <div class="date-font">2 days ago</div>
+              </div>
+            </div>
+            <div
+              class="popup-box-content"
+              onclick="expand(this)"
+              id="index-grow"
+            >
+              <div class="icon">
+                <img
+                  class="alarm-icons1 cursor_pointer"
+                  src="assets\signal-tower.svg "
+                  alt="assets\signal-tower - white.svg"
+                  width="30px"
+                />
+              </div>
+              <div class="container-descrption_date">
+                <div class="descrpition-font">
+                  Frequency issue has been resolved
+                </div>
+                <div class="date-font">4 days ago</div>
+              </div>
+            </div>
+          </div>
+          <!-- Notification popoup ends -->
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <!-- side menu starts -->
+      <div class="sidemenu">
+        <div>
+          <div class="cursor_pointer">
+            <img
+              class="icons1"
+              src="assets\grid.svg"
+              alt="assets\grid-pink.svg"
+              width="30px"
+              alt2="assets\grid.svg"
+            />
+          </div>
+          <div class="menu-2 cursor_pointer">
+            <img
+              class="icons1"
+              src="assets\analytics.svg"
+              alt="not found"
+              width="30px"
+            />
+          </div>
+          <div class="menu-3 cursor_pointer">
+            <img
+              class="icons1"
+              src="assets\ticket-white.svg"
+              alt="not found"
+              width="30px"
+            />
+          </div>
+          <div class="menu-4 cursor_pointer">
+            <img
+              class="icons1"
+              src="assets\settings (1).svg"
+              alt="not found"
+              width="30px"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-length">
+          <div
+            class="menu-items cursor_pointer"
+            id="Dashboard"
+            onclick="change(this)"
+            tabindex="0"
+          >
+            <div class="menu-item-key">
+              <img
+                class="ticket-icons1 cursor_pointer"
+                src="assets\grid.svg"
+                alt="assets\grid-pink.svg"
+                width="24px"
+              />
+            </div>
+            <div class="menu-item-value">My Dashboard</div>
+          </div>
+          <div
+            class="menu-items cursor_pointer"
+            id="Dashboard"
+            onclick="change(this)"
+          >
+            <div class="menu-item-key">
+              <img
+                class="ticket-icons1 cursor_pointer"
+                src="assets\analytics.svg"
+                alt="assets\analytics-pink.svg"
+                width="24px"
+                src2=" assets/icons8-ticket-confirmed-50.png"
+              />
+            </div>
+            <div class="menu-item-value">Reports</div>
+          </div>
+          <div
+            class="menu-items cursor_pointer"
+            tabindex="2"
+            id="Dashboard"
+            onclick="change(this)"
+          >
+            <div class="menu-item-key">
+              <img
+                class="ticket-icons1 cursor_pointer"
+                src="assets\ticket-white.svg"
+                alt="assets\ticket-pink.svg"
+                width="24px"
+              />
+            </div>
+            <div class="menu-item-value">Communications</div>
+          </div>
+          <div
+            class="menu-items cursor_pointer"
+            id="Dashboard"
+            onclick="change(this)"
+          >
+            <div class="menu-item-key">
+              <img
+                class="ticket-icons1 cursor_pointer"
+                src="assets\settings (1).svg"
+                alt="assets\settings-pink.svg"
+                width="24px"
+              />
+            </div>
+            <div class="menu-item-value">Settings</div>
+          </div>
+        </div>
+      </div>
+      <!-- side menu ends  -->
+      <div class="content_wrapper">
+        <!--  Notification popup -->
+
+        <!-- Notification popoup ends -->
+        <div class="heading">
+          <div class="heading1">
+            <div class="nav-tilte">
+              <span class="first-subheading roboto-regular">
+                illegal Transmissions report [Site Name] [Cell Name]
+              </span>
+            </div>
+
+            <div class="arrow-cell-node">
+              <div class="arrow-box cursor_pointer">
+                <img
+                  class="lefticons1"
+                  src="assets/icons8-left-arrow-64.png"
+                  alt=" not found"
+                  width="20x"
+                />
+              </div>
+              <div class="middle-box">
+                <div class="cell-box roboto-bold cursor_pointer">
+                  [Cell-Name]
+                </div>
+                <div class="count">
+                  <span class="count-subheading cursor_pointer"
+                    >12.42123, 150.231</span
+                  >
+                </div>
+              </div>
+              <div class="node-box cursor_pointer roboto-bold">
+                <div class="dot">.</div>
+                <div>1 Node - Issue</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="heading2">
+            <div class="slack-ticket">
+              <div class="slackicon">
+                <img
+                  class="slack-icons cursor_pointer"
+                  src="assets/icons8-slack-new-480.png"
+                  alt=" not found"
+                  width="30px"
+                  height="30px"
+                />
+              </div>
+
+              <div class="create-box cursor_pointer roboto-bold">
+                <button
+                  id="modal-button "
+                  class="button-border button-color create-ticket-button"
+                  onclick="modal()"
+                >
+                  <p>CREATE TICKET</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="outer-box">
+          <div class="innerbox-1">
+            <article class="box2-new">
+              <div
+                class="Overview font-text headng-5 view headings roboto-bold"
+              >
+                Overview
+              </div>
+              <div class="d-content">
+                <div class="content-key-value">
+                  <div class="c-key Description-text font-text roboto-bold">
+                    Description
+                  </div>
+                  <div class="c-value neque font-text roboto-regular">
+                    Neque porro quisquam est qui dolorem ipsum quia dolor sit
+                    amet, consectetur, adipisci velit
+                  </div>
+                </div>
+
+                <div class="content-key-value contains-l-key-value">
+                  <div class="c-key location font-text roboto-bold">
+                    Location
+                  </div>
+                  <div class="c-l-value font-text location-view">
+                    <div class="roboto-regular">12.42123, 150.231</div>
+                    <div
+                      class="color-pink font-text cursor_pointer roboto-bold"
+                    >
+                      View on Spectrum Map >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-content">
+                <div class="content-key-value">
+                  <div class="c-key Description-text font-text roboto-bold">
+                    Status
+                  </div>
+                  <div class="c-value neque font-text roboto-regular">
+                    Neque porro quisquam est qui dolorem ipsum quia dolor sit
+                    amet, consectetur, adipisci velit
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div class="box-tables">
+              <article class="box3">
+                <div class="box3-1 font-text headings roboto-bold">
+                  Cell Frequency
+                </div>
+                <div class="box3-2">
+                  <img
+                    class="img1"
+                    src="assets/kisspng-sine-wave-graph-of-a-function-waveform-electric-vector-5ad806efd4fff6.0671796415241069918725.png"
+                    alt=" not found"
+                    width="30px"
+                  />
+                </div>
+
+                <div class="Frequency-tabe">
+                  <div class="frow">
+                    <div class="fr1 font-text roboto-bold">
+                      Frequency Center
+                    </div>
+                    <div class="fr2 font-text roboto-regular opacity">
+                      28.000
+                    </div>
+                  </div>
+                  <div class="frow">
+                    <div class="fr1 font-text roboto-bold">Actual</div>
+                    <div class="fr2 font-text roboto-regular opacity">
+                      42.000
+                    </div>
+                  </div>
+                  <div class="frow">
+                    <div class="fr1 font-text roboto-bold">Upper</div>
+                    <div class="fr2 font-text roboto-regular opacity">
+                      28.000
+                    </div>
+                  </div>
+                  <div class="frow">
+                    <div class="fr1 font-text roboto-bold">Lower</div>
+                    <div class="fr2 font-text roboto-regular opacity">
+                      26.000
+                    </div>
+                  </div>
+                  <div class="frow">
+                    <div class="fr1 font-text roboto-bold">Delta</div>
+                    <div class="fr2 font-text roboto-regular opacity">
+                      -14.000
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <div class="issues-box">
+                <div class="issue-text font-text headings roboto-bold">
+                  Issues
+                </div>
+                <div class="issue-content-box">
+                  <div class="issue-text-wrapper">
+                    <div class="contents">
+                      <!-- <div class="issue-table-dot">.</div> -->
+                      <div
+                        class="issue-number cursor_pointer"
+                        style="color: #e20074"
+                        onclick="change1(this)"
+                      >
+                        110202
+                      </div>
+                      <div class="Description" style="opacity: 0.8">
+                        [Description]
+                      </div>
+                      <div class="region" style="opacity: 0.8">[Region]</div>
+                      <div style="opacity: 0.8">Cell</div>
+                      <div class="button">
+                        <button
+                          class="issue-button-high button-border cursor_pointer"
+                        >
+                          High
+                        </button>
+                      </div>
+                    </div>
+                    <div class="issue-text-desc" id="issue-text-desc">
+                      Lorem ispum door sit amet, consecteturadipiscing elit, sed
+                      do eliusmod. Mauris venenatis gravida leo semper egestas.
+                      Pellentesque vulputate.
+                    </div>
+                  </div>
+                  <div class="issue-text-wrapper">
+                    <div class="contents" id="contents">
+                      <!-- <div> -->
+                      <!-- <div class="issue-table-dot">.</div> -->
+                      <div
+                        class="issue-number cursor_pointer"
+                        style="color: #e20074"
+                        onclick="change1(this)"
+                      >
+                        110202
+                      </div>
+                      <!-- </div> -->
+                      <div class="Description" style="opacity: 0.8">
+                        [Description]
+                      </div>
+                      <div class="region" style="opacity: 0.8">[Region]</div>
+                      <div style="opacity: 0.8">Cell</div>
+                      <div class="button">
+                        <button
+                          class="issue-button-medium button-border cursor_pointer"
+                        >
+                          Medium
+                        </button>
+                      </div>
+                    </div>
+                    <div class="issue-text-desc">
+                      Lorem ispum door sit amet, consecteturadipiscing elit, sed
+                      do eliusmod. Mauris venenatis gravida leo semper egestas.
+                      Pellentesque vulputate.
+                    </div>
+                  </div>
+                  <div class="issue-text-wrapper">
+                    <div class="contents">
+                      <!-- <div class="issue-table-dot">.</div> -->
+                      <div
+                        class="issue-number cursor_pointer"
+                        style="color: #e20074"
+                        onclick="change1(this)"
+                      >
+                        110202
+                      </div>
+                      <div class="Description" style="opacity: 0.8">
+                        [Description]
+                      </div>
+                      <div class="region" style="opacity: 0.8">[Region]</div>
+                      <div style="opacity: 0.8">Cell</div>
+                      <div class="button">
+                        <button
+                          class="issue-button-low button-border cursor_pointer"
+                        >
+                          Low
+                        </button>
+                      </div>
+                    </div>
+                    <div class="issue-text-desc">
+                      Lorem ispum door sit amet, consecteturadipiscing elit, sed
+                      do eliusmod. Mauris venenatis gravida leo semper egestas.
+                      Pellentesque vulputate.
+                    </div>
+                  </div>
+                  <div class="issue-text-wrapper">
+                    <div class="contents">
+                      <div
+                        class="issue-number cursor_pointer"
+                        style="color: #e20074"
+                        onclick="change1(this)"
+                      >
+                        110202
+                      </div>
+                      <div class="Description" style="opacity: 0.8">
+                        [Description]
+                      </div>
+                      <div class="region" style="opacity: 0.8">[Region]</div>
+                      <div style="opacity: 0.8">Cell</div>
+                      <div class="button">
+                        <button
+                          class="issue-button-low button-border cursor_pointer"
+                        >
+                          Low
+                        </button>
+                      </div>
+                    </div>
+                    <div class="issue-text-desc">
+                      Lorem ispum door sit amet, consecteturadipiscing elit, sed
+                      do eliusmod. Mauris venenatis gravida leo semper egestas.
+                      Pellentesque vulputate.
+                    </div>
+                  </div>
+                  <div class="issue-text-wrapper">
+                    <div class="contents">
+                      <div
+                        class="issue-number cursor_pointer"
+                        style="color: #e20074"
+                        onclick="change1(this)"
+                      >
+                        110202
+                      </div>
+                      <div class="Description" style="opacity: 0.8">
+                        [Description]
+                      </div>
+                      <div class="region" style="opacity: 0.8">[Region]</div>
+                      <div style="opacity: 0.8">Cell</div>
+                      <div class="button">
+                        <button
+                          class="issue-button-low button-border cursor_pointer"
+                        >
+                          Low
+                        </button>
+                      </div>
+                    </div>
+                    <div class="issue-text-desc">
+                      Lorem ispum door sit amet, consecteturadipiscing elit, sed
+                      do eliusmod. Mauris venenatis gravida leo semper egestas.
+                      Pellentesque vulputate.
+                    </div>
+                  </div>
+                  <div class="issue-text-wrapper">
+                    <div class="contents">
+                      <div
+                        class="issue-number cursor_pointer"
+                        style="color: #e20074"
+                        onclick="change1(this)"
+                      >
+                        110202
+                      </div>
+                      <div class="Description" style="opacity: 0.8">
+                        [Description]
+                      </div>
+                      <div class="region" style="opacity: 0.8">[Region]</div>
+                      <div style="opacity: 0.8">Cell</div>
+                      <div class="button">
+                        <button
+                          class="issue-button-low button-border cursor_pointer"
+                        >
+                          Low
+                        </button>
+                      </div>
+                    </div>
+                    <div class="issue-text-desc">
+                      Lorem ispum door sit amet, consecteturadipiscing elit, sed
+                      do eliusmod. Mauris venenatis gravida leo semper egestas.
+                      Pellentesque vulputate.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+            <div
+              class="box21"
+              id="modal-frequency-trend"
+              onclick="frequencyTrend()"
+            >
+              <div class="Frequency font-text headings roboto-bold">
+                Frequency Trend
+              </div>
+
+              <img
+                class="graph"
+                src="assets/dotgraph.png"
+                alt=" not found"
+                width="30px"
+              />
+            </div>
+          </div>
+          <div class="innerbox-2">
+            <div class="p-child-1">
+              <div
+                class="communications font-text communication-text roboto-bold cursor_pointer"
+              >
+                Communications
+              </div>
+              <div
+                class="viweall font-text communication-text roboto-bold cursor_pointer"
+              >
+                View All
+              </div>
+            </div>
+            <div class="p-child-2">
+              <div class="child-2" onclick="expand1(this)">
+                <div class="child2-1">
+                  <div class="tools">
+                    <div class="jiraicon">
+                      <img
+                        class="communication-icons"
+                        src="assets/icons8-jira-480.png"
+                        alt=" not found"
+                        width="30px"
+                      />
+                    </div>
+                    <div class="name">
+                      <div class="jiratext">
+                        <span class="jira roboto-regular"
+                          >Jira Ticket Created
+                        </span>
+                      </div>
+                      <div>
+                        <span class="cell roboto-regular">[Cell Name]</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="High">
+                    <div>
+                      <button
+                        class="medium-button roboto-regular button-border"
+                      >
+                        Medium
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="child2-2">
+                  <p class="para roboto-regular line-clamp">
+                    Test confirm for day.Lorem ispum door sit amet,
+                    consecteturadipiscing elit, sed do eliusmod. Mauris
+                    venenatis gravida leo semper egestas. Pellentesque
+                    vulputate, leo at dictum varius, Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia
+                    curae; Pellentesque dapibus justo eu volutpat ultricies. Sed
+                  </p>
+                </div>
+
+                <div class="child2-3">
+                  <div class="status-1 roboto-regular status-3">
+                    Status: Waiting for Support
+                  </div>
+                  <div class="lastupdated roboto-regular">
+                    Last Updated:10:00:00 PST
+                  </div>
+                </div>
+              </div>
+
+              <div class="child-2" onclick="expand1(this)">
+                <div class="child2-1">
+                  <div class="tools">
+                    <div class="jiraicon">
+                      <img
+                        class="communication-icons"
+                        src="assets/icons8-slack-new-480.png"
+                        alt=" not found"
+                        width="30px"
+                      />
+                    </div>
+                    <div class="name">
+                      <div class="jiratext">
+                        <span class="jira roboto-regular">Slack Message</span>
+                      </div>
+                      <div>
+                        <span class="cell roboto-regular">[Cell Name]</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="medium">
+                    <div>
+                      <button class="high-button roboto-regular button-border">
+                        High
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="child2-2">
+                  <p class="para roboto-regular line-clamp">
+                    Test confirm for day.Lorem ispum door sit amet,
+                    consecteturadipiscing elit, sed do eliusmod. Mauris
+                    venenatis gravida leo semper egestas. Pellentesque
+                    vulputate, leo at dictum varius, Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia
+                    curae; Pellentesque dapibus justo eu volutpat ultricies. Sed
+                  </p>
+                </div>
+
+                <div class="child2-3">
+                  <div>
+                    <span class="status-1 roboto-regular status-3"
+                      >Status: Waiting for Support</span
+                    >
+                  </div>
+                  <div>
+                    <span class="lastupdated roboto-regular"
+                      >Last Updated:10:00:00 PST</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="child-2" onclick="expand1(this)">
+                <div class="child2-1">
+                  <div class="tools">
+                    <div class="jiraicon">
+                      <img
+                        class="communication-icons"
+                        src="assets/icons8-jira-480.png"
+                        alt=" not found"
+                        width="30px"
+                      />
+                    </div>
+                    <div class="name">
+                      <div class="jiratext">
+                        <span class="jira roboto-regular"
+                          >Jira Ticket Moved</span
+                        >
+                      </div>
+                      <div>
+                        <span class="cell roboto-regular">[Cell Name]</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="medium">
+                    <div>
+                      <button
+                        class="medium-button roboto-regular button-border"
+                      >
+                        Medium
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="child2-2">
+                  <p class="para roboto-regular line-clamp">
+                    Test confirm for day.Lorem ispum door sit amet,
+                    consecteturadipiscing elit, sed do eliusmod. Mauris
+                    venenatis gravida leo semper egestas. Pellentesque
+                    vulputate, leo at dictum varius, Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia
+                    curae; Pellentesque dapibus justo eu volutpat ultricies. Sed
+                  </p>
+                </div>
+
+                <div class="child2-3">
+                  <div>
+                    <span class="status-1 roboto-regular status-3"
+                      >Status: Waiting for Support</span
+                    >
+                  </div>
+                  <div>
+                    <span class="lastupdated roboto-regular"
+                      >Last Updated:10:00:00 PST</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="child-2" onclick="expand1(this)">
+                <div class="child2-1">
+                  <div class="tools">
+                    <div class="jiraicon">
+                      <img
+                        class="communication-icons"
+                        src="assets/icons8-dead-face-64.png"
+                        alt=" not found"
+                        width="30px"
+                      />
+                    </div>
+                    <div class="name">
+                      <div class="jiratext">
+                        <span class="jira roboto-regular">Message</span>
+                      </div>
+                      <div>
+                        <span class="cell roboto-regular">[Cell Name]</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="medium">
+                    <div>
+                      <button
+                        class="medium-button roboto-regular button-border"
+                      >
+                        Medium
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="child2-2">
+                  <p class="para roboto-regular line-clamp">
+                    Test confirm for day.Lorem ispum door sit amet,
+                    consecteturadipiscing elit, sed do eliusmod. Mauris
+                    venenatis gravida leo semper egestas. Pellentesque
+                    vulputate, leo at dictum varius, Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia
+                    curae; Pellentesque dapibus justo eu volutpat ultricies. Sed
+                  </p>
+                </div>
+
+                <div class="child2-3">
+                  <div>
+                    <span class="status-1 roboto-regular status-3"
+                      >Status: Waiting for Support</span
+                    >
+                  </div>
+                  <div>
+                    <span class="lastupdated roboto-regular"
+                      >Last Updated:10:00:00 PST</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="child-2" onclick="expand1(this)">
+                <div class="child2-1">
+                  <div class="tools">
+                    <div class="jiraicon">
+                      <img
+                        class="communication-icons"
+                        src="assets/icons8-dead-face-64.png"
+                        alt=" not found"
+                        width="30px"
+                      />
+                    </div>
+                    <div class="name">
+                      <div class="jiratext">
+                        <span class="jira roboto-regular">Message</span>
+                      </div>
+                      <div>
+                        <span class="cell roboto-regular">[Cell Name]</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="medium">
+                    <div>
+                      <button
+                        class="medium-button roboto-regular button-border"
+                      >
+                        Medium
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="child2-2">
+                  <p class="para roboto-regular line-clamp">
+                    Test confirm for day.Lorem ispum door sit amet,
+                    consecteturadipiscing elit, sed do eliusmod. Mauris
+                    venenatis gravida leo semper egestas. Pellentesque
+                    vulputate, leo at dictum varius, Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia
+                    curae; Pellentesque dapibus justo eu volutpat ultricies. Sed
+                  </p>
+                </div>
+
+                <div class="child2-3">
+                  <div>
+                    <span class="status-1 roboto-regular status-3"
+                      >Status: Waiting for Support</span
+                    >
+                  </div>
+                  <div>
+                    <span class="lastupdated roboto-regular"
+                      >Last Updated:10:00:00 PST</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Html&CssAssignment-1.js"></script>
+  </body>
+</html>
